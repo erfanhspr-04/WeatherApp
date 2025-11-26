@@ -158,22 +158,31 @@ class MainActivity : AppCompatActivity() {
         val sea_level = mainObj.optInt("sea_level", 0)
         val ground_level = mainObj.optInt("grnd_level", 0)
 
-        runOnUiThread {
-            showContent(
-                jsonObject.optString("name", "—"),
-                description,
-                imageUrl,
-                sunrise,
-                sunset,
-                temp,
-                feelsLike,
-                tempMin,
-                tempMax,
-                pressure,
-                humidity,
-                sea_level,
-                ground_level
-            )
+            runOnUiThread {
+                showContent(
+                    jsonObject.optString("name", "—"),
+                    description,
+                    imageUrl,
+                    sunrise,
+                    sunset,
+                    temp,
+                    feelsLike,
+                    tempMin,
+                    tempMax,
+                    pressure,
+                    humidity,
+                    sea_level,
+                    ground_level
+                )
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            runOnUiThread {
+                setButtonsEnabled(true)
+                binding.progressBar.visibility = View.INVISIBLE
+                binding.imageViewTower.visibility = View.VISIBLE
+                binding.textViewWeatherDescription.text = "خطا در پردازش داده‌ها"
+            }
         }
     }
 
