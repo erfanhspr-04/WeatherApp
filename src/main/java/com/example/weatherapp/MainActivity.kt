@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         binding.buttonArdabil.setOnClickListener {
             currentCity = "Ardabil,IR"
             startLoadingState()
+            updateTopImageForCity(currentCity)
             getData(currentCity)
         }
 
