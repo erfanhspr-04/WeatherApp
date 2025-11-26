@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         binding.buttonTabriz.setOnClickListener {
             currentCity = "Tabriz,IR"
             startLoadingState()
+            updateTopImageForCity(currentCity)
             getData(currentCity)
         }
 
