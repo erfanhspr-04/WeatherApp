@@ -158,9 +158,9 @@ class MainActivity : AppCompatActivity() {
         val iconId = weatherObject.getString("icon")
         val imageUrl = "https://openweathermap.org/img/wn/${iconId}@2x.png"
 
-        val sysObj = jsonObject.optJSONObject("sys")
-        val sunrise = sysObj?.optInt("sunrise") ?: 0
-        val sunset = sysObj?.optInt("sunset") ?: 0
+            val sysObj = jsonObject.optJSONObject("sys")
+            val sunrise = sysObj?.optInt("sunrise") ?: 0
+            val sunset = sysObj?.optInt("sunset") ?: 0
 
             val mainObj = jsonObject.getJSONObject("main")
             val temp = mainObj.optDouble("temp", Double.NaN)
