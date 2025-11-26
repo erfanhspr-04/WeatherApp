@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         startLoadingState()
+        updateTopImageForCity(currentCity)
         getData(currentCity)
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
