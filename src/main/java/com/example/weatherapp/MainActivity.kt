@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity() {
         binding.buttonZanjan.setOnClickListener {
             currentCity = "Zanjan,IR"
             startLoadingState()
+            updateTopImageForCity(currentCity)
             getData(currentCity)
         }
 
