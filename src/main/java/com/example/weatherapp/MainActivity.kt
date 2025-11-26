@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         //دکمه های شهر ها : تبریز،اردبیل،زنجان
 
         binding.buttonTabriz.setOnClickListener {
-            getData("Tabriz,IR")
+            currentCity = "Tabriz,IR"
             startLoadingState()
             getData(currentCity)
         }
