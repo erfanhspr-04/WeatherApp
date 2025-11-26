@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 
         val apiKey = "89b58d0145a98ba71b882bf706fb3df5"
         val cityToUse = city ?: currentCity
-        val url = "https://api.openweathermap.org/data/2.5/weather?q=${cityToUse}&limit=5&appid=${apiKey}&lang=fa&units=metric"
+        val url = "https://api.openweathermap.org/data/2.5/weather?q=${cityToUse}&appid=${apiKey}&lang=fa&units=metric"
 
         val request = Request.Builder()
             .url(url)
