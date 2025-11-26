@@ -152,11 +152,11 @@ class MainActivity : AppCompatActivity() {
         try {
             val jsonObject = JSONObject(rawData)
 
-        val weatherArray = jsonObject.getJSONArray("weather")
-        val weatherObject = weatherArray.getJSONObject(0)
-        val description = weatherObject.getString("description")
-        val iconId = weatherObject.getString("icon")
-        val imageUrl = "https://openweathermap.org/img/wn/${iconId}@2x.png"
+            val weatherArray = jsonObject.getJSONArray("weather")
+            val weatherObject = weatherArray.getJSONObject(0)
+            val description = weatherObject.getString("description")
+            val iconId = weatherObject.getString("icon")
+            val imageUrl = "https://openweathermap.org/img/wn/${iconId}@2x.png"
 
             val sysObj = jsonObject.optJSONObject("sys")
             val sunrise = sysObj?.optInt("sunrise") ?: 0
