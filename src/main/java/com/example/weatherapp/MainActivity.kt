@@ -38,8 +38,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //دکمه های شهر ها : تبریز،اردبیل،زنجان
-
         binding.buttonTabriz.setOnClickListener {
             currentCity = "Tabriz,IR"
             startLoadingState()
