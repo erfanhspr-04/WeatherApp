@@ -201,5 +201,22 @@ class MainActivity : AppCompatActivity() {
         binding.textViewGroundlevel.text = "--"
 
         Glide.with(this@MainActivity).load(R.drawable.ic_refresh).into(binding.imageViewWeather)
+
+        setButtonsEnabled(false)
+    }
+
+    private fun setButtonsEnabled(enabled: Boolean) {
+        binding.buttonTabriz.isEnabled = enabled
+        binding.buttonArdabil.isEnabled = enabled
+        binding.buttonZanjan.isEnabled = enabled
+    }
+    
+    private fun updateTopImageForCity(city: String) {
+        when (city) {
+            "Tabriz,IR" -> Glide.with(this).load(R.drawable.tabriz_image).into(binding.imageViewTower)
+            "Ardabil,IR" -> Glide.with(this).load(R.drawable.ardabil_image).into(binding.imageViewTower)
+            "Zanjan,IR"  -> Glide.with(this).load(R.drawable.zanjan_image).into(binding.imageViewTower)
+            else -> Glide.with(this).load(R.drawable.urmia_image).into(binding.imageViewTower)
+        }
     }
 }
