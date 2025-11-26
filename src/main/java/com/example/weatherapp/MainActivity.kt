@@ -24,7 +24,10 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
-    private var currentCity: String ="Urmia,Sadi"
+
+    private var currentCity: String = "Urmia,Sadi"
+
+    private var currentCall: Call? = null
 
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase!!))
