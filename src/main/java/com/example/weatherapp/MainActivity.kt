@@ -129,6 +129,10 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call, response: Response) {
+                if (!response.isSuccessful) {
+                    onFailure(call, IOException("Unsuccessful: ${response.code}"))
+                    return
+                }
                 val rawContent = response.body!!.string()//string in json format
                 getDataAndShowThem(rawContent)
             }
