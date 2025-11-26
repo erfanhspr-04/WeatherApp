@@ -136,7 +136,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getDataAndShowThem(rawData: String){
-        val jsonObject = JSONObject(rawData)
+        try {
+            val jsonObject = JSONObject(rawData)
 
         val weatherArray = jsonObject.getJSONArray("weather")
         val weatherObject = weatherArray.getJSONObject(0)
