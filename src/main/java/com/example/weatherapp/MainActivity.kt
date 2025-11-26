@@ -224,6 +224,7 @@ class MainActivity : AppCompatActivity() {
         binding.buttonArdabil.isEnabled = enabled
         binding.buttonZanjan.isEnabled = enabled
     }
+
     
     private fun updateTopImageForCity(city: String) {
         when (city) {
