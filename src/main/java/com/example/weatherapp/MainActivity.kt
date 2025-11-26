@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonArdabil.setOnClickListener {
-            getData("Ardabil,IR")
+            currentCity = "Ardabil,IR"
             startLoadingState()
             getData(currentCity)
         }
