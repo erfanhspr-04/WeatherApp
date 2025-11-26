@@ -162,15 +162,15 @@ class MainActivity : AppCompatActivity() {
         val sunrise = sysObj?.optInt("sunrise") ?: 0
         val sunset = sysObj?.optInt("sunset") ?: 0
 
-        val mainObj = jsonObject.getJSONObject("main")
-        val temp = mainObj.optDouble("temp", Double.NaN)
-        val feelsLike = mainObj.optDouble("feels_like", Double.NaN)
-        val tempMin = mainObj.optDouble("temp_min", Double.NaN)
-        val tempMax = mainObj.optDouble("temp_max", Double.NaN)
-        val pressure = mainObj.optInt("pressure", 0)
-        val humidity = mainObj.optInt("humidity", 0)
-        val sea_level = mainObj.optInt("sea_level", 0)
-        val ground_level = mainObj.optInt("grnd_level", 0)
+            val mainObj = jsonObject.getJSONObject("main")
+            val temp = mainObj.optDouble("temp", Double.NaN)
+            val feelsLike = mainObj.optDouble("feels_like", Double.NaN)
+            val tempMin = mainObj.optDouble("temp_min", Double.NaN)
+            val tempMax = mainObj.optDouble("temp_max", Double.NaN)
+            val pressure = mainObj.optInt("pressure", 0)
+            val humidity = mainObj.optInt("humidity", 0)
+            val sea_level = mainObj.optInt("sea_level", 0)
+            val ground_level = mainObj.optInt("grnd_level", 0)
 
             runOnUiThread {
                 showContent(
