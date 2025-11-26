@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonZanjan.setOnClickListener {
-            getData("Zanjan,IR")
+            currentCity = "Zanjan,IR"
             startLoadingState()
             getData(currentCity)
         }
