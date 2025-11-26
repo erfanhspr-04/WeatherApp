@@ -120,6 +120,12 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call, e: IOException) {
                 e.printStackTrace()
                 Log.d("tagx", "onFailure: failed -> ${e.message}")
+                runOnUiThread {
+                    setButtonsEnabled(true)
+                    binding.progressBar.visibility = View.INVISIBLE
+                    binding.imageViewTower.visibility = View.VISIBLE
+                    binding.textViewWeatherDescription.text = "خطا در دریافت اطلاعات"
+                }
             }
 
             override fun onResponse(call: Call, response: Response) {
