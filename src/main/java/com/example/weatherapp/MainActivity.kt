@@ -116,7 +116,14 @@ class MainActivity : AppCompatActivity() {
         val request = Request.Builder()
             .url(url)
             .build()
-        client.newCall(request).enqueue(object : Callback {
+
+        try {
+            currentCall?.cancel()
+        } catch (e: Exception) {
+        }
+
+        currentCall = client.newCall(request)
+        currentCall!!.enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 e.printStackTrace()
                 Log.d("tagx", "onFailure: failed -> ${e.message}")
