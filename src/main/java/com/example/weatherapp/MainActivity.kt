@@ -96,6 +96,8 @@ class MainActivity : AppCompatActivity() {
         binding.textViewGroundlevel.text = " سطح زمین : $ground_level"
 
         Glide.with(this@MainActivity).load(imageUrl).into(binding.imageViewWeather)
+
+        setButtonsEnabled(true)
     }
 
     private fun getTimeFromUnixTime(unixTime: Int): String {
